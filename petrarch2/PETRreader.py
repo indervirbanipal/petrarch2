@@ -2046,6 +2046,7 @@ def read_xml_input(filepaths, parsed=False):
         		data.append(json.loads(line))
         xmlstring = dicttoxml.dicttoxml(data)
         newxmlfilepath = path + ".toxml"
+        os.remove(newxmlfilepath)
         xmlfile = open(newxmlfilepath,'w')
         xmlfile.write(xmlstring)
         xmlfile.close()
