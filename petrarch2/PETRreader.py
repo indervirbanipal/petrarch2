@@ -45,6 +45,10 @@ import sys
 import math  # required for ordinal date calculations
 import logging
 import xml.etree.ElementTree as ET
+import json
+import urllib
+import dicttoxml
+
 
 try:
     from ConfigParser import ConfigParser
@@ -2036,7 +2040,16 @@ def read_xml_input(filepaths, parsed=False):
     holding = {}
 
     for path in filepaths:
-        tree = ET.iterparse(path)
+        data = []
+	with open(path) as f:
+    		for line in f:
+        		data.append(json.loads(line))
+        xmlstring = dicttoxml.dicttoxml(data)
+        newxmlfilepath = path + ".toxml"
+        xmlfile = open(newxmlfilepath,'w')
+        xmlfile.write(xmlstring)
+        xmlfile.close()
+        tree = ET.iterparse(newxmlfilepath)
 
         for event, elem in tree:
             if event == "end" and elem.tag == "Sentence":
