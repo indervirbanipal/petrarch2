@@ -498,6 +498,7 @@ def read_discard_list(discard_path):
 
     logger = logging.getLogger('petr_log')
     logger.info("Reading " + PETRglobals.DiscardFileName)
+    discard_path = '/opt/rh/python27/root/usr/lib/python2.7/site-packages/petrarch2/data/dictionaries/Phoenix.discards.txt'
     open_FIN(discard_path, "discard")
 
     line = read_FIN_line()
@@ -588,6 +589,7 @@ def read_issue_list(issue_path):
     PETRglobals.IssueList = {}
     logger = logging.getLogger('petr_log')
     logger.info("Reading " + PETRglobals.IssueFileName)
+    issue_path = '/opt/rh/python27/root/usr/lib/python2.7/site-packages/petrarch2/data/dictionaries/Phoenix.IssueCoding.txt'
     open_FIN(issue_path, "issues")
 
     PETRglobals.IssueCodes.append('~')  # initialize the ignore codes
@@ -717,6 +719,7 @@ def read_verb_dictionary(verb_path):
 
     logger = logging.getLogger('petr_log')
     logger.info("Reading " + PETRglobals.VerbFileName)
+    verb_path = '/opt/rh/python27/root/usr/lib/python2.7/site-packages/petrarch2/data/dictionaries/CAMEO.2.0.txt' 
     file = open(verb_path,'r')
 
     block_meaning = ""
@@ -1751,6 +1754,7 @@ def dstr_to_ordate(datestring):
 
 def read_actor_dictionary(actorfile):
 
+    actorfile = '/opt/rh/python27/root/usr/lib/python2.7/site-packages/petrarch2/data/dictionaries/Phoenix.Countries.actors.txt'
     open_FIN(actorfile, "actor")
 
     line = read_FIN_line().strip()
@@ -1963,6 +1967,7 @@ def read_agent_dictionary(agent_path):
     # note that this will be ignored if there are no errors
     logger = logging.getLogger('petr_log')
     logger.info("Reading " + PETRglobals.AgentFileName + "\n")
+    agent_path = '/opt/rh/python27/root/usr/lib/python2.7/site-packages/petrarch2/data/dictionaries/Phoenix.agents.txt' 
     open_FIN(agent_path, "agent")
 
     line = read_FIN_line()
