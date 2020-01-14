@@ -1,4 +1,4 @@
-PETRARCH
+PETRARCH 
 ========
 
 [![Join the chat at https://gitter.im/openeventdata/petrarch2](https://badges.gitter.im/openeventdata/petrarch2.svg)](https://gitter.im/openeventdata/petrarch2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
